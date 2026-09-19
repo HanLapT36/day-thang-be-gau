@@ -233,7 +233,7 @@
           <div class="section-header">
             <div class="tag">Count down to the celebration</div>
             <h2>Ngày Gấu tròn một tháng</h2>
-            <p>Gia đình trân trọng mời quý vị dành chút thời gian đến chung vui, gửi một lời chúc nhỏ và lưu lại cùng Gấu một kỷ niệm đầu đời thật ấm áp.</p>
+            <p>Gia đình trân trọng mời <span id="sectionGuest">quý vị</span> dành chút thời gian đến chung vui, gửi một lời chúc nhỏ và lưu lại cùng Gấu một kỷ niệm đầu đời thật ấm áp.</p>
           </div>
 
           <div class="count-shell">
@@ -332,18 +332,21 @@
     const welcomeGuest = document.getElementById('welcomeGuest');
     const presenceGuest = document.getElementById('presenceGuest');
     const memoryGuest = document.getElementById('memoryGuest');
+    const sectionGuest = document.getElementById('sectionGuest');
     if (guest) {
       guestEl.textContent = guest;
       overlayGuest.textContent = `Gia đình Bé Gấu trân trọng kính mời ${guest} đến chung vui cùng gia đình.`;
       if (welcomeGuest) welcomeGuest.textContent = guest;
       if (presenceGuest) presenceGuest.textContent = guest;
       if (memoryGuest) memoryGuest.textContent = guest;
+      if (sectionGuest) sectionGuest.textContent = guest;
       document.title = `Mời ${guest} • Đầy tháng Bé Gấu`;
     } else {
       guestEl.textContent = 'Quý vị';
       if (welcomeGuest) welcomeGuest.textContent = 'quý vị';
       if (presenceGuest) presenceGuest.textContent = 'quý vị';
       if (memoryGuest) memoryGuest.textContent = 'quý vị';
+      if (sectionGuest) sectionGuest.textContent = 'quý vị';
     }
 
     document.getElementById('openBtn').addEventListener('click',()=>{
