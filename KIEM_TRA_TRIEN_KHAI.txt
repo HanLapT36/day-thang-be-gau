@@ -1,0 +1,16 @@
+SAU KHI COMMIT LÊN GITHUB / VERCEL, HÃY MỞ 3 LINK NÀY:
+
+1. https://day-thang-be-gau.vercel.app/zalo-preview.jpg
+   -> Phải hiện ảnh preview Bé Gấu.
+
+2. https://day-thang-be-gau.vercel.app/bac-cu-tuan
+   -> Phải hiện thiệp, có ảnh Gấu và QR.
+
+3. https://day-thang-be-gau.vercel.app/ba-hong-quyen
+   -> Phải hiện thiệp đúng tên Bá Hồng Quyên.
+
+LƯU Ý:
+- Tất cả file trong gói này phải nằm NGAY THƯ MỤC GỐC của repo.
+- KHÔNG tạo thêm thư mục gau_day_thang_v6_4_root_safe trên GitHub.
+- Ảnh Gấu và QR đã nhúng trực tiếp vào từng HTML.
+- Chỉ còn zalo-preview.jpg là file ảnh rời ở thư mục gốc để Zalo đọc Open Graph.

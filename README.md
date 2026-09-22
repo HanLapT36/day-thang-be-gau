@@ -1,21 +1,19 @@
-# Bé Gấu V6.2 – Clean Invite Links + Zalo Preview
+# Bé Gấu V6.4 Root-Safe
 
-Bản này giữ giao diện V6.1 Việt Premium nhưng đổi cách chia sẻ thiệp:
+Bản này loại bỏ hoàn toàn sự phụ thuộc vào thư mục `assets`.
 
-- Link sạch, không còn `?guest=...`.
-- Mỗi khách có một URL riêng, ví dụ: `https://day-thang-be-gau.vercel.app/bac-cu-tuan`.
-- Tên khách vẫn tự xuất hiện xuyên suốt thiệp.
-- Mỗi trang khách có thẻ Open Graph riêng để Zalo/Facebook đọc tiêu đề phù hợp.
-- Có ảnh preview 1200×630 tại `assets/zalo-preview.jpg`.
+## Cấu trúc phải có ngay ở gốc repo
 
-## 5 link đã tạo
-- **Bác Cù Tuấn**: `https://day-thang-be-gau.vercel.app/bac-cu-tuan`
-- **Bá Hoài Anh**: `https://day-thang-be-gau.vercel.app/ba-hoai-anh`
-- **Bá Hồng Quyên**: `https://day-thang-be-gau.vercel.app/ba-hong-quyen`
-- **Bá Ngọc Dung**: `https://day-thang-be-gau.vercel.app/ba-ngoc-dung`
-- **Bác Phan Tuấn**: `https://day-thang-be-gau.vercel.app/bac-phan-tuan`
+- `index.html`
+- `bac-cu-tuan.html`
+- `ba-hoai-anh.html`
+- `ba-hong-quyen.html`
+- `ba-ngoc-dung.html`
+- `bac-phan-tuan.html`
+- `zalo-preview.jpg`
+- `vercel.json`
 
-## Cách cập nhật
-Upload toàn bộ nội dung thư mục này lên repo GitHub (không chỉ index.html), commit và chờ Vercel deploy.
+Ảnh Bé Gấu và mã QR đã được nhúng trực tiếp trong từng file HTML.
 
-`vercel.json` bật Clean URLs nên file `bac-cu-tuan.html` được truy cập bằng `/bac-cu-tuan`.
+Zalo preview dùng:
+`https://day-thang-be-gau.vercel.app/zalo-preview.jpg`
