@@ -1,22 +1,18 @@
-# Bé Gấu V6.7 – Zalo Card Fix
+# Bé Gấu V6.9 – Mobile Luxury Polish
 
-Bản này tối ưu riêng cho preview/card Zalo của khách tạo mới.
+Bản này tập trung tối ưu trải nghiệm điện thoại mà không làm thay đổi bố cục desktop.
 
-Thay đổi chính:
-- Mỗi thiệp có một `og:image` riêng theo slug:
-  `zalo-preview.jpg?v=<slug>`
-- Bổ sung `og:site_name`, `og:locale`, `og:image:alt`
-- Bổ sung canonical URL
-- Vẫn giữ `zalo-preview.jpg` ở thư mục gốc
-- Ảnh Gấu và QR trong thiệp vẫn tự chứa
+Nâng cấp chính:
+- Màn hình mở thiệp cân dòng đẹp hơn ở 360–430 px
+- Giảm nguy cơ rơi một từ xuống dòng riêng
+- Tối ưu khoảng trắng, cỡ chữ và line-height toàn trang
+- Hero gọn hơn, ảnh Gấu nổi bật hơn
+- Nút bấm lớn, dễ chạm
+- Countdown cân đối hơn
+- Khối thời gian / địa điểm / lời mời gọn và rõ
+- Phần đường đi và QR tối ưu riêng cho mobile
+- Bóng đổ nhẹ hơn để cảm giác cao cấp và sạch hơn
 
-Lý do:
-Zalo có cache preview khá mạnh. Nếu mọi thiệp cùng trỏ tới đúng một URL ảnh,
-khách mới đôi khi không được làm mới card ngay. Thêm `?v=<slug>` khiến mỗi thiệp
-có URL preview ảnh riêng, giảm khả năng dính cache cũ.
-
-Sau khi upload:
-1. Commit toàn bộ file lên GitHub.
-2. Chờ Vercel deploy.
-3. Kiểm tra URL khách mới.
-4. Gửi lại link sạch lên Zalo.
+Cách cập nhật:
+Upload đè toàn bộ file lên thư mục gốc repo GitHub rồi Commit.
+Vercel sẽ tự deploy.
