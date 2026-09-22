@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#edf7ff">
-<title>Thiệp mời đầy tháng Bé Gấu • Lê Tuấn Phong</title>
-<meta name="description" content="Gia đình Bé Gấu trân trọng kính mời quý vị đến chung vui trong lễ đầy tháng." />
+<title>Mời Bác Cù Tuấn • Đầy tháng Bé Gấu</title>
+<meta name="description" content="Gia đình Bé Gấu trân trọng kính mời Bác Cù Tuấn đến chung vui trong lễ đầy tháng." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Thiệp mời đầy tháng Bé Gấu • Lê Tuấn Phong" />
-  <meta property="og:description" content="Gia đình Bé Gấu trân trọng kính mời quý vị đến chung vui trong lễ đầy tháng." />
+  <meta property="og:title" content="Mời Bác Cù Tuấn • Đầy tháng Bé Gấu" />
+  <meta property="og:description" content="Gia đình Bé Gấu trân trọng kính mời Bác Cù Tuấn đến chung vui trong lễ đầy tháng." />
   <meta property="og:image" content="https://day-thang-be-gau.vercel.app/assets/zalo-preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://day-thang-be-gau.vercel.app/" />
+  <meta property="og:url" content="https://day-thang-be-gau.vercel.app/bac-cu-tuan" />
   <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -279,7 +279,7 @@ footer .name{font-family:"Cormorant Garamond",serif;color:var(--navy);font-size:
 </div>
 <script>
 const MAP_URL='https://www.google.com/maps?q=21.3685814,105.1657603';
-const DEFAULT_GUEST="";const qs=new URLSearchParams(location.search);const guest=(qs.get('guest')||DEFAULT_GUEST||'').trim();
+const DEFAULT_GUEST="Bác Cù Tuấn";const qs=new URLSearchParams(location.search);const guest=(qs.get('guest')||DEFAULT_GUEST||'').trim();
 const setText=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text};
 if(guest){setText('guestName',guest);setText('welcomeGuest',guest);setText('sectionGuest',guest);setText('presenceGuest',guest);setText('memoryGuest',guest);setText('overlayGuest',`Gia đình Bé Gấu trân trọng kính mời ${guest} đến chung vui cùng gia đình.`);document.title=`Mời ${guest} • Đầy tháng Bé Gấu`;}
 document.getElementById('openBtn').onclick=()=>{const o=document.getElementById('openOverlay');o.classList.add('hide');setTimeout(()=>o.style.display='none',600)};
