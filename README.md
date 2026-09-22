@@ -1,19 +1,14 @@
-# Bé Gấu V6.4 Root-Safe
+# Bé Gấu V6.6 – Final Wording
 
-Bản này loại bỏ hoàn toàn sự phụ thuộc vào thư mục `assets`.
+Bản chốt câu chữ theo hướng **trang trọng nhưng ấm áp, gần gũi**.
 
-## Cấu trúc phải có ngay ở gốc repo
+Các điểm chính:
+- Giảm lặp từ “trân trọng kính mời”.
+- Lời dẫn tự nhiên hơn, bớt cảm giác câu mẫu.
+- Phần đếm ngược, lời mời và lời kết mềm mại hơn.
+- “Đường tới nhà Gấu” đổi thành “Đường đến nhà Gấu”.
+- Chỉ dẫn Google Maps rõ và thống nhất với nút “Chỉ đường”.
+- Tên khách vẫn tự động thay ở các đoạn cá nhân hóa.
 
-- `index.html`
-- `bac-cu-tuan.html`
-- `ba-hoai-anh.html`
-- `ba-hong-quyen.html`
-- `ba-ngoc-dung.html`
-- `bac-phan-tuan.html`
-- `zalo-preview.jpg`
-- `vercel.json`
-
-Ảnh Bé Gấu và mã QR đã được nhúng trực tiếp trong từng file HTML.
-
-Zalo preview dùng:
-`https://day-thang-be-gau.vercel.app/zalo-preview.jpg`
+Cách cập nhật:
+Upload đè các file lên thư mục gốc repo GitHub rồi Commit; Vercel sẽ tự deploy.
