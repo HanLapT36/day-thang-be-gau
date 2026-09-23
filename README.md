@@ -1,18 +1,16 @@
-# Bé Gấu V6.9 – Mobile Luxury Polish
+# Bé Gấu V6.10 – Overlay Title Fix
 
-Bản này tập trung tối ưu trải nghiệm điện thoại mà không làm thay đổi bố cục desktop.
+Bản này sửa riêng lỗi trình bày tiêu đề màn hình mở thiệp trên điện thoại.
 
-Nâng cấp chính:
-- Màn hình mở thiệp cân dòng đẹp hơn ở 360–430 px
-- Giảm nguy cơ rơi một từ xuống dòng riêng
-- Tối ưu khoảng trắng, cỡ chữ và line-height toàn trang
-- Hero gọn hơn, ảnh Gấu nổi bật hơn
-- Nút bấm lớn, dễ chạm
-- Countdown cân đối hơn
-- Khối thời gian / địa điểm / lời mời gọn và rõ
-- Phần đường đi và QR tối ưu riêng cho mobile
-- Bóng đổ nhẹ hơn để cảm giác cao cấp và sạch hơn
+Mục tiêu:
+- Dòng “Thiệp mời đầy tháng” luôn nằm trọn trên một dòng
+- Dòng “Bé Gấu” nằm riêng phía dưới
+- Không còn kiểu ngắt dòng thành “Thiệp mời đầy / tháng Bé Gấu”
+
+Đã chỉnh:
+- Tách tiêu đề thành 2 dòng cố định
+- Tinh lại cỡ chữ từng dòng trên mobile
+- Giữ bản desktop ổn định
 
 Cách cập nhật:
 Upload đè toàn bộ file lên thư mục gốc repo GitHub rồi Commit.
-Vercel sẽ tự deploy.
