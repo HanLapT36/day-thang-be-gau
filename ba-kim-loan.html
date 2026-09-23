@@ -629,60 +629,28 @@ footer .name{font-family:"Cormorant Garamond",serif;color:var(--navy);font-size:
 }
 
 
-/* ===== V6.10 OVERLAY TITLE FIX ===== */
-.open-card h2{
-  max-width:none !important;
+
+/* ===== V6.13 FINAL AUDIT =====
+   Consolidated mobile rules: headings, long guest names, QR caption,
+   map block, quote, buttons, spacing and text wrapping.
+*/
+
+/* --- Opening card --- */
+.open-card{
+  width:min(430px,calc(100vw - 28px)) !important;
 }
-.open-card h2 .title-line-1,
-.open-card h2 .title-line-2{
-  display:block;
-  text-align:center;
-}
-.open-card h2 .title-line-1{
+.open-card .eyebrow{
+  max-width:100% !important;
+  margin-inline:auto !important;
   white-space:nowrap;
+  font-size:.71rem !important;
+  line-height:1.4 !important;
+  letter-spacing:.09em !important;
 }
-@media (max-width: 820px){
-  .open-card h2{
-    max-width:320px !important;
-  }
-  .open-card h2 .title-line-1{
-    font-size:clamp(1.82rem,8.2vw,2.45rem);
-    line-height:1.02;
-  }
-  .open-card h2 .title-line-2{
-    font-size:clamp(2.2rem,10.6vw,3rem);
-    line-height:.94;
-  }
-}
-@media (max-width: 430px){
-  .open-card h2{
-    max-width:300px !important;
-  }
-  .open-card h2 .title-line-1{
-    font-size:clamp(1.72rem,7.9vw,2.2rem);
-  }
-  .open-card h2 .title-line-2{
-    font-size:clamp(2.15rem,11.7vw,2.8rem);
-  }
-}
-@media (max-width: 360px){
-  .open-card h2 .title-line-1{
-    font-size:1.66rem;
-  }
-  .open-card h2 .title-line-2{
-    font-size:2.08rem;
-  }
-}
-
-
-/* ===== V6.11 FINAL POLISH ===== */
-
-/* Opening card title: force the intended two-line hierarchy */
 .open-card h2{
-  margin:14px auto 12px !important;
+  width:100%;
   max-width:340px !important;
-  font-family:"Cormorant Garamond",serif;
-  color:var(--navy);
+  margin:14px auto 12px !important;
   text-align:center;
 }
 .open-card h2 .title-line-1,
@@ -693,150 +661,381 @@ footer .name{font-family:"Cormorant Garamond",serif;color:var(--navy);font-size:
 }
 .open-card h2 .title-line-1{
   white-space:nowrap;
-  font-size:2.08rem;
+  font-size:2.04rem;
   line-height:1.02;
-  letter-spacing:-.02em;
+  letter-spacing:-.018em;
 }
 .open-card h2 .title-line-2{
   margin-top:2px;
-  font-size:2.72rem;
-  line-height:.92;
-  letter-spacing:-.02em;
+  font-size:2.7rem;
+  line-height:.93;
+  letter-spacing:-.018em;
+}
+.open-card p{
+  max-width:330px !important;
+  text-wrap:pretty;
 }
 
-/* Keep the opening eyebrow elegant and balanced */
-.open-card .eyebrow{
-  max-width:100% !important;
-  white-space:nowrap;
-  font-size:.72rem;
-  letter-spacing:.11em;
-  line-height:1.4;
-}
-
-/* Avoid awkward single-word wraps in key headings */
-.section-head h2,
-.map-main h3,
-.guest-name,
-.baby-name{
+/* --- Dynamic guest names --- */
+.guest-name{
   text-wrap:balance;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+.guest-name.guest-name--long{
+  font-size:2.7rem !important;
+}
+.guest-name.guest-name--xlong{
+  font-size:2.3rem !important;
 }
 
-/* Polish vertical rhythm */
-.hero-card,
-.countbox,
-.map-card,
-.note{
-  overflow:hidden;
+/* --- Important one-line micro headings --- */
+.photo-title{
+  white-space:nowrap !important;
 }
+.birth-badge{
+  white-space:nowrap;
+}
+
+/* --- Section typography --- */
 .section-head{
   max-width:760px;
   margin-left:auto;
   margin-right:auto;
 }
-.section-head p{
-  text-wrap:pretty;
+.section-head h2{
+  text-wrap:balance;
 }
+.section-head p,
 .invite-message p{
   text-wrap:pretty;
 }
+.map-main h3{
+  text-wrap:balance;
+}
 
-/* Mobile */
+/* --- QR caption: deliberately balanced, never orphan a single word --- */
+.qr small{
+  display:block;
+  width:100%;
+  max-width:320px !important;
+  margin:12px auto 0 !important;
+  padding:0 8px;
+  color:#728ba2 !important;
+  text-align:center !important;
+  font-size:.84rem !important;
+  line-height:1.48 !important;
+}
+.qr small .qr-line{
+  display:block;
+  white-space:nowrap;
+}
+.qr small .qr-line + .qr-line{
+  margin-top:2px;
+}
+
+/* --- Closing quote: elegant, but not oversized --- */
+.note p{
+  max-width:720px !important;
+  font-size:1.82rem !important;
+  line-height:1.48 !important;
+  text-wrap:balance;
+}
+
+/* --- Mobile audit --- */
 @media (max-width:820px){
+  .container{
+    width:min(100% - 16px,680px) !important;
+  }
+
+  /* opening */
+  .overlay{
+    min-height:100svh;
+    padding:max(14px,env(safe-area-inset-top)) 12px max(16px,env(safe-area-inset-bottom));
+  }
   .open-card{
-    width:min(430px,calc(100vw - 24px)) !important;
-    padding:27px 20px 25px !important;
+    padding:27px 19px 25px !important;
+    border-radius:29px !important;
   }
   .open-card .eyebrow{
-    font-size:clamp(.62rem,2.6vw,.72rem);
-    letter-spacing:.085em;
+    font-size:clamp(.61rem,2.55vw,.70rem) !important;
+    letter-spacing:.075em !important;
   }
   .open-card h2{
-    max-width:320px !important;
+    max-width:315px !important;
   }
   .open-card h2 .title-line-1{
-    font-size:clamp(1.72rem,7.65vw,2.08rem);
+    font-size:clamp(1.66rem,7.35vw,1.98rem);
   }
   .open-card h2 .title-line-2{
-    font-size:clamp(2.24rem,10.7vw,2.78rem);
+    font-size:clamp(2.2rem,10.35vw,2.68rem);
   }
   .open-card p{
-    max-width:320px !important;
+    font-size:clamp(.96rem,3.8vw,1.03rem) !important;
     line-height:1.68 !important;
   }
-
-  /* main hero */
-  .guest-name{
-    line-height:1.03 !important;
-  }
-  .when{
-    text-wrap:balance;
-  }
-
-  /* readable body copy */
-  .invite-message p,
-  .section-head p,
-  .info p,
-  .address{
-    orphans:2;
-    widows:2;
-  }
-
-  /* Buttons: consistent touch targets */
-  .btn,
   .open-card button{
+    min-width:176px;
     min-height:48px;
   }
 
-  /* Keep map heading neat */
-  .map-main h3{
+  /* hero */
+  .hero{
+    padding:10px 0 28px !important;
+  }
+  .hero-card{
+    border-radius:27px !important;
+  }
+  .invite-pane{
+    padding:23px 18px 21px !important;
+  }
+  .guest-name{
+    font-size:clamp(2.3rem,10.5vw,2.85rem) !important;
+    line-height:1.02 !important;
+  }
+  .guest-name.guest-name--long{
+    font-size:clamp(2.05rem,9.4vw,2.48rem) !important;
+  }
+  .guest-name.guest-name--xlong{
+    font-size:clamp(1.82rem,8.3vw,2.18rem) !important;
+  }
+  .baby-name{
+    font-size:clamp(3.65rem,16vw,4.35rem) !important;
+    line-height:.93 !important;
+  }
+  .when{
     white-space:normal !important;
+    text-align:center;
+    text-wrap:balance;
+  }
+
+  /* photo heading */
+  .photo-head{
+    gap:7px !important;
+  }
+  .photo-title{
+    font-size:clamp(.56rem,2.15vw,.67rem) !important;
+    letter-spacing:.065em !important;
+  }
+  .birth-badge{
+    font-size:.62rem !important;
+    padding:5px 8px !important;
+  }
+
+  /* body copy: centered on mobile is cleaner than stretched justification */
+  .invite-message{
+    padding:23px 19px 25px !important;
+  }
+  .invite-message p,
+  .invite-message .invite-copy{
+    max-width:600px !important;
+    margin-inline:auto;
+    text-align:center !important;
+    text-align-last:center !important;
+    font-size:clamp(.96rem,3.95vw,1.03rem) !important;
+    line-height:1.78 !important;
+  }
+
+  /* actions */
+  .actions{
+    display:grid !important;
+    grid-template-columns:1fr 1fr;
+    gap:9px !important;
+  }
+  .btn{
+    min-height:48px;
+    padding:12px 10px !important;
+    font-size:.88rem !important;
+  }
+
+  /* quick cards */
+  .quick-grid{
+    gap:9px !important;
+    margin-top:17px !important;
+  }
+  .quick-card{
+    padding:14px 15px !important;
+  }
+
+  /* sections */
+  .section{
+    padding:42px 0 !important;
+  }
+  .section-head{
+    margin-bottom:21px !important;
+  }
+  .section-head h2{
+    max-width:580px;
+    margin:10px auto 0 !important;
+    padding:0 8px;
+    font-size:clamp(2.28rem,11.4vw,2.92rem) !important;
+    line-height:1.01 !important;
+  }
+  .section-head p{
+    max-width:610px;
+    margin:13px auto 0 !important;
+    padding:0 10px !important;
+    text-align:center !important;
+    font-size:.95rem !important;
+    line-height:1.74 !important;
+  }
+
+  /* countdown */
+  .countbox{
+    padding:11px !important;
+    border-radius:23px !important;
+  }
+  .countdown{
+    gap:8px !important;
+  }
+  .time{
+    min-height:112px !important;
+    padding:16px 6px !important;
+  }
+  .time b{
+    font-size:2.05rem !important;
+  }
+
+  /* info cards */
+  .info-grid{
+    gap:9px !important;
+  }
+  .info{
+    padding:16px !important;
+    border-radius:19px !important;
+  }
+  .info p{
+    font-size:.93rem !important;
+    line-height:1.67 !important;
+  }
+
+  /* map */
+  .map-card{
+    padding:15px !important;
+    gap:15px !important;
+    border-radius:23px !important;
+  }
+  .map-main h3{
+    margin:0 auto;
+    max-width:100%;
+    font-size:clamp(1.72rem,8.3vw,2.04rem) !important;
+    line-height:1.04 !important;
+    white-space:nowrap !important;
+  }
+  .address{
+    margin-top:13px !important;
+    padding:15px !important;
+    font-size:.93rem !important;
+    line-height:1.68 !important;
+  }
+  .map-actions{
+    display:grid !important;
+    grid-template-columns:1fr;
+    gap:9px !important;
+    margin-top:14px !important;
+  }
+  .map-actions .btn{
+    width:100%;
+  }
+  .qr img{
+    width:min(202px,54vw) !important;
+    border-width:8px !important;
+    border-radius:18px !important;
+  }
+  .qr small{
+    max-width:300px !important;
+    font-size:.8rem !important;
+  }
+
+  /* closing quote */
+  .note{
+    padding:25px 18px !important;
+    border-radius:23px !important;
+  }
+  .note p{
+    max-width:560px !important;
+    font-size:clamp(1.30rem,6.1vw,1.52rem) !important;
+    line-height:1.5 !important;
+  }
+  .note .sign{
+    margin-top:12px !important;
+    font-size:.86rem !important;
+  }
+
+  footer{
+    padding:25px 0 36px !important;
+    font-size:.84rem !important;
   }
 }
 
-/* iPhone-width polish */
+/* iPhone-width audit */
 @media (max-width:430px){
+  .container{
+    width:calc(100% - 14px) !important;
+  }
+
   .open-card{
-    width:calc(100vw - 28px) !important;
-    padding:25px 17px 23px !important;
-    border-radius:28px !important;
+    width:calc(100vw - 26px) !important;
+    padding:24px 16px 23px !important;
   }
   .open-card .eyebrow{
-    font-size:.63rem;
-    letter-spacing:.07em;
+    font-size:.61rem !important;
+    letter-spacing:.06em !important;
   }
   .open-card h2{
-    max-width:300px !important;
+    max-width:292px !important;
   }
   .open-card h2 .title-line-1{
-    font-size:clamp(1.64rem,7.4vw,1.92rem);
+    font-size:clamp(1.58rem,7.0vw,1.80rem);
   }
   .open-card h2 .title-line-2{
-    font-size:clamp(2.14rem,10.5vw,2.55rem);
+    font-size:clamp(2.08rem,10vw,2.43rem);
   }
-  .open-card p{
-    font-size:.98rem !important;
+
+  .photo-title{
+    font-size:clamp(.53rem,2.05vw,.61rem) !important;
+    letter-spacing:.045em !important;
+  }
+  .birth-badge{
+    font-size:.59rem !important;
+    padding:4px 7px !important;
   }
 
   .section-head h2{
-    line-height:1.02 !important;
+    font-size:clamp(2.15rem,11.5vw,2.66rem) !important;
   }
-  .section-head p{
-    padding-left:8px !important;
-    padding-right:8px !important;
+
+  .map-main h3{
+    font-size:clamp(1.58rem,7.7vw,1.85rem) !important;
+  }
+
+  .qr small{
+    max-width:286px !important;
+    font-size:.78rem !important;
   }
 }
 
-/* Very narrow devices */
+/* Narrow devices */
 @media (max-width:360px){
   .open-card .eyebrow{
-    font-size:.58rem;
-    letter-spacing:.055em;
+    font-size:.56rem !important;
+    letter-spacing:.045em !important;
   }
   .open-card h2 .title-line-1{
-    font-size:1.56rem;
+    font-size:1.47rem;
   }
   .open-card h2 .title-line-2{
-    font-size:2.05rem;
+    font-size:1.98rem;
+  }
+  .photo-title{
+    font-size:.49rem !important;
+    letter-spacing:.02em !important;
+  }
+  .birth-badge{
+    font-size:.55rem !important;
+  }
+  .actions{
+    grid-template-columns:1fr !important;
   }
 }
 
@@ -877,9 +1076,9 @@ footer .name{font-family:"Cormorant Garamond",serif;color:var(--navy);font-size:
   <div class="info-grid"><div class="info"><div class="ico">🕤</div><h3>Thời gian</h3><p><strong>09 giờ 30 phút</strong><br>Chủ nhật, ngày <strong>04/10/2026</strong></p></div><div class="info"><div class="ico">📍</div><h3>Địa điểm</h3><p><strong>Thôn Phiên Quận</strong><br>xã Hùng Việt, tỉnh Phú Thọ</p></div><div class="info"><div class="ico">💌</div><h3>Lời mời</h3><p>Sự hiện diện của <span id="presenceGuest">quý vị</span> là niềm vui và món quà ý nghĩa dành cho Gấu cùng gia đình.</p></div></div>
 </div></section>
 
-<section class="section"><div class="container"><div class="section-head"><div class="tag">Thông tin đường đi</div><h2>Đường đến nhà Gấu</h2><p class="desc desc-center">Quét mã QR hoặc chọn <strong>Chỉ đường</strong> để mở vị trí và bắt đầu dẫn đường trên Google Maps.</p></div><div class="map-card"><div class="map-main"><h3>Hẹn gặp tại nhà Gấu</h3><div class="address"><strong>Địa điểm tổ chức</strong><br>Thôn Phiên Quận, xã Hùng Việt, tỉnh Phú Thọ<br><br><strong>Tọa độ</strong><br>21.3685814, 105.1657603</div><div class="map-actions"><a class="btn primary" href="https://www.google.com/maps?q=21.3685814,105.1657603" target="_blank" rel="noopener">🧭 Chỉ đường</a><button class="btn" id="copyBtn">🔗 Sao chép link thiệp</button></div></div><div class="qr"><img src="data:image/png;base64,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" alt="QR vị trí nhà Gấu"><small>Quét mã để mở vị trí và chỉ đường trên điện thoại.</small></div></div></div></section>
+<section class="section"><div class="container"><div class="section-head"><div class="tag">Thông tin đường đi</div><h2>Đường đến nhà Gấu</h2><p class="desc desc-center">Quét mã QR hoặc chọn <strong>Chỉ đường</strong> để mở vị trí và bắt đầu dẫn đường trên Google Maps.</p></div><div class="map-card"><div class="map-main"><h3>Hẹn gặp tại nhà Gấu</h3><div class="address"><strong>Địa điểm tổ chức</strong><br>Thôn Phiên Quận, xã Hùng Việt, tỉnh Phú Thọ<br><br><strong>Tọa độ</strong><br>21.3685814, 105.1657603</div><div class="map-actions"><a class="btn primary" href="https://www.google.com/maps?q=21.3685814,105.1657603" target="_blank" rel="noopener">🧭 Chỉ đường</a><button class="btn" id="copyBtn">🔗 Sao chép link thiệp</button></div></div><div class="qr"><img src="data:image/png;base64,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" alt="QR vị trí nhà Gấu"><small><span class="qr-line">Quét mã để mở bản đồ</span><span class="qr-line">và bắt đầu chỉ đường.</span></small></div></div></div></section>
 
-<section class="section"><div class="container"><div class="note"><p>“Sự hiện diện của <span id="memoryGuest">quý vị</span> sẽ góp phần làm nên một kỷ niệm thật đẹp trong cột mốc đầu đời của Gấu.”</p><div class="sign">Gia đình Bé Gấu hân hạnh được đón tiếp ♥</div></div></div></section>
+<section class="section"><div class="container"><div class="note"><p>“Sự hiện diện của <span id="memoryGuest">quý vị</span> sẽ góp phần làm nên một kỷ niệm thật đẹp trong ngày đầy tháng của Gấu.”</p><div class="sign">Gia đình Bé Gấu hân hạnh được đón tiếp ♥</div></div></div></section>
 </main>
 <footer><div class="container"><div class="name">Lê Tuấn Phong • Bé Gấu</div><div>Đầy tháng • Chủ nhật 04/10/2026 • 09:30</div><div style="margin-top:6px">Thôn Phiên Quận, xã Hùng Việt, tỉnh Phú Thọ</div></div></footer>
 </div>
@@ -887,7 +1086,7 @@ footer .name{font-family:"Cormorant Garamond",serif;color:var(--navy);font-size:
 const MAP_URL='https://www.google.com/maps?q=21.3685814,105.1657603';
 const DEFAULT_GUEST="Bà Kim Loan";const qs=new URLSearchParams(location.search);const guest=(qs.get('guest')||DEFAULT_GUEST||'').trim();
 const setText=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text};
-if(guest){setText('guestName',guest);setText('welcomeGuest',guest);setText('sectionGuest',guest);setText('presenceGuest',guest);setText('memoryGuest',guest);setText('overlayGuest',`Gia đình Bé Gấu trân trọng kính mời ${guest} đến chung vui cùng gia đình.`);document.title=`Mời ${guest} • Đầy tháng Bé Gấu`;}
+if(guest){setText('guestName',guest);const gn=document.getElementById('guestName');if(gn){if(guest.length>28)gn.classList.add('guest-name--xlong');else if(guest.length>20)gn.classList.add('guest-name--long');}setText('welcomeGuest',guest);setText('sectionGuest',guest);setText('presenceGuest',guest);setText('memoryGuest',guest);setText('overlayGuest',`Gia đình Bé Gấu trân trọng kính mời ${guest} đến chung vui cùng gia đình.`);document.title=`Mời ${guest} • Đầy tháng Bé Gấu`;}
 document.getElementById('openBtn').onclick=()=>{const o=document.getElementById('openOverlay');o.classList.add('hide');setTimeout(()=>o.style.display='none',600)};
 const target=new Date('2026-10-04T09:30:00+07:00').getTime();function tick(){let d=Math.max(0,target-Date.now());const day=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000),s=Math.floor((d%60000)/1000);setText('days',String(day).padStart(2,'0'));setText('hours',String(h).padStart(2,'0'));setText('minutes',String(m).padStart(2,'0'));setText('seconds',String(s).padStart(2,'0'));}tick();setInterval(tick,1000);
 document.getElementById('copyBtn').onclick=async function(){try{await navigator.clipboard.writeText(location.href);const old=this.textContent;this.textContent='✓ Đã sao chép';setTimeout(()=>this.textContent=old,1500)}catch(e){prompt('Sao chép đường dẫn:',location.href)}};
